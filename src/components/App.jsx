@@ -5,8 +5,6 @@ import About from "./About.jsx"
 import ArticleList from "./ArticleList"
 import logo from "../assets/logo.js"
 
-console.log(blogData);
-
 /* Main application component
  * Renders the Header, About section, and ArticleList
  */

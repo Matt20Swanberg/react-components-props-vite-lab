@@ -1,94 +1,81 @@
-# Putting it All Together: Components and Props
+# Personal Blog React App
 
-## Learning Goals
+A simple personal blog application built with React. This project demonstrates
+core React concepts including component hierarchy, props, JSX, and rendering
+lists with `.map()`.
 
-- Create components that return JSX
-- Use props to make components dynamic
-- Transform lists of data into lists of components
+## Features
 
-## Overview
+- Reusable React components
+- Props-based data flow
+- Dynamic article rendering
+- Accessible image support
+- Default prop values
+- Component-based project structure
 
-Now that you've learned how to work with components in React, it's time to build
-something and put those skills to use! Your goal for this lab is to make a
-_static site_ in React to practice building components, writing JSX, and passing
-down data as props.
+## Technologies Used
 
-We'll be creating a personal blog site, similar to
-[Dan Abramov's Overreacted](https://overreacted.io/):
+- React
+- JavaScript (ES6)
+- JSX
+- Vite
 
-![demo](https://curriculum-content.s3.amazonaws.com/phase-2/react-hooks-component-props-mini-project/demo.png)
+## Project Structure
 
-There is some starter code available in `src/components/App.js`. There is also
-some data in `data/blog.js` that is being imported into `App` so you can pass it
-down to the components that need it.
+```txt
+src/
+├── assets/
+├── components/
+│   ├── App.jsx
+│   ├── Header.jsx
+│   ├── About.jsx
+│   ├── ArticleList.jsx
+│   └── Article.jsx
+├── data/
+│   └── blog.js
+└── main.jsx
+```
 
-## Deliverables
+## Component Hierarchy
 
-Have a look at the components below and draw out a component hierarchy so you
-can determine how to pass data down as props.
+```txt
+App
+├── Header
+├── About
+└── ArticleList
+    └── Article
+```
 
-### Header
+## Running the Project
 
-Make a `Header` component as a child of `App`. It should return:
+Install dependencies:
 
-- a `<header>` element with the following elements inside:
-  - an `<h1>` with the name of the blog, passed as a prop called `name`
+```bash
+npm install
+```
 
-### About
+Start the development server:
 
-Make an `About` component as a child of `App`. It should return:
+```bash
+npm run dev
+```
 
-- an `<aside>` element with the following elements inside:
-  - an `<img>` element, with the `src` set to an image passed as a prop called
-    `image`
-  - the `<img>` element should use this placeholder image as a _default value_
-    for the prop if no prop is passed in: "https://via.placeholder.com/215"
-  - the image should also be accessible! Give it an `alt` attribute of "blog
-    logo"
-  - a `<p>` element, with the text for the blog passed in as a prop called
-    `about`
+Open the localhost URL displayed in the terminal.
 
-### ArticleList
+## Screenshots
 
-Make an `ArticleList` component as a child of `App`. It should return:
+![Blog Homepage](./screenshots/screenshot.png)
 
-- a `<main>` element with the following components inside:
-  - an array of `Article` components (one component for each of the `posts`
-    passed down as props to `ArticleList`)
-  - make sure to assign a unique `key` attribute to each `Article`
+## Learning Objectives
 
-### Article
+This project was created to practice:
 
-Make an `Article` component as a child of `ArticleList`. It should return:
+- Creating React components
+- Passing props between components
+- Rendering dynamic lists
+- Using default props
+- Organizing component-based applications
 
-- an `<article>` element, with the following elements inside:
-  - an `<h3>` element displaying the title of the article, passed as a prop
-    called `title`
-  - a `<small>` element displaying the date of the article, passed as a prop
-    called `date`
-    - a _default value_ of "January 1, 1970" should be used if no date is passed
-      as a prop
-  - a `<p>` element displaying the preview of the article, passed as a prop
-    called `preview`
+## Author
 
-### Bonus Feature: 'Minutes to Read'
-
-You'll notice in the original [Overreacted](https://overreacted.io/) site,
-there's a 'minutes to read' indicator next to each article.
-
-If the article takes less than 30 minutes to read:
-
-- For every 5 minutes (rounded up to the nearest 5), display a coffee cup emoji.
-  For example, if the article takes 3 minutes to read, you should display "☕️ 3
-  min read". If the article takes 7 minute, you should display "☕️☕️ 7 min
-  read".
-
-If the article takes 30 minutes or longer to read:
-
-- For every 10 minutes (rounded up to the nearest 10), display a bento box
-  emoji. For example, if the article takes 35 minutes to read, you should
-  display "🍱🍱🍱🍱 35 min read". If the article takes 61 minutes to read, you
-  should display "🍱🍱🍱🍱🍱🍱🍱 61 min read".
-
-There aren't tests for this feature, so you'll have to rely on running the code
-in the browser to see if your implementation works!
+Matthew Swanberg

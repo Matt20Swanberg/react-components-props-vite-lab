@@ -79,3 +79,8 @@ This project was created to practice:
 ## Author
 
 Matthew Swanberg
+
+
+## License
+
+This project is for course 4 module 2.
